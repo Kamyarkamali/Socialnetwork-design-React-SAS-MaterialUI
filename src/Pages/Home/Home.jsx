@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 //Styled
 import "./Home.scss";
 
 function Home() {
   return (
-    <div>Home</div>
+    <div className='home'>
+      Home
+    </div>
   )
 }
 
