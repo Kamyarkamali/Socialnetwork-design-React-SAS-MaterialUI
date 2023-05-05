@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 //ReactRouterDom
@@ -12,13 +12,15 @@ import Navbar from "./Components/Navbar/Navbar";
 import LeftBar from "./Components/LeftBar/LeftBar";
 import RightBar from './Components/RightBar/RightBar';
 import Home from "./Pages/Home/Home";
+import "./styled/Styled.scss";
 
 function App() {
+  const [dark,setDark]=useState(false)
   const currentUser=true
   const Layout=()=>{
     return(
-      <div>
-          <Navbar/>
+      <div className={dark ? "dark" : "light"}>
+          <Navbar dark={dark} setDark={setDark}/>
         <div style={{display:"flex"}}>
           <LeftBar/>
           <div style={{flex:6}}>

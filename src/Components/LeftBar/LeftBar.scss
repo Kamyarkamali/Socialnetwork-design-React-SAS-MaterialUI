@@ -1,7 +1,13 @@
 .leftt{
-    border: 2px solid lightblue;
+    border: 1px solid lightblue;
     border-radius: 10px;
     height: fit-content;
+    position: sticky;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    &::-webkit-scrollbar{
+        display: none;
+    }
     .container{
         padding: 20px;
 

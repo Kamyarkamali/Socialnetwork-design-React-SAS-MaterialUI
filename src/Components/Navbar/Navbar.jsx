@@ -12,7 +12,10 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import "./Navbar.scss";
 import {Link} from "react-router-dom";
 
-function Navbar() {
+function Navbar({dark,setDark}) {
+  const darkHandeler=()=>{
+    setDark(!dark)
+  }
   return (
     <div className='navbar'>
       <div className="left">
@@ -20,7 +23,9 @@ function Navbar() {
           <span>Tehran Sochial</span>
         </Link>
           <HomeIcon/>
+          <div onClick={darkHandeler}>
           <DarkModeIcon/>
+          </div>
           <GridViewIcon/>
           <div className="search">
           <SearchIcon/>
