@@ -15,12 +15,12 @@ import Home from "./Pages/Home/Home";
 import "./styled/Styled.scss";
 
 import { DarkModeContext } from './Context/darkModeContext';
+import { CurrentUser } from './Context/author';
 
 function App() {
   const {darkMode}=useContext(DarkModeContext)
-  console.log(darkMode)
   const [dark,setDark]=useState(false)
-  const currentUser=true
+  const currentUser=useContext(CurrentUser)
   const Layout=()=>{
     return(
       <div className={darkMode ? "dark" : "light"}>

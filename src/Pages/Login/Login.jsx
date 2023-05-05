@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 //Styled
 import "./Login.scss";
 import { Link } from 'react-router-dom';
 
+import { CurrentUser } from '../../Context/author';
+
 function Login() {
+  const {login}=useContext(CurrentUser)
+
+  const loginHandel=()=>{
+    login()
+  }
+
   return (
     <div className='login'>
       <div className="card">
@@ -23,7 +31,7 @@ function Login() {
             <input className='inputt' type="text" placeholder='ایمیل یا شماره تماس' />
             <input className='inputt' type="password" placeholder='رمز ورود'/>
             <Link to={"/profile"}>
-            <button>ورود</button>
+            <button onClick={loginHandel}>ورود</button>
             </Link>
           </form>
         </div>

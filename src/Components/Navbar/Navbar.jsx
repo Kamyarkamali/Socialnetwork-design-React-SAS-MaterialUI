@@ -26,7 +26,7 @@ function Navbar({dark,setDark}) {
           <span>Tehran Sochial</span>
         </Link>
           <HomeIcon/>
-          {darkMode ? <DarkModeIcon onClick={toggle}/> : <LightModeIcon onClick={toggle}/>}
+          {darkMode ? <LightModeIcon onClick={toggle}/> : <DarkModeIcon onClick={toggle}/>}
           
         
           <GridViewIcon/>
