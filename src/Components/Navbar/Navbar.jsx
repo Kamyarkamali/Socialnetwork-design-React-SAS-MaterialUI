@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 //Icon Material UI
 import HomeIcon from '@mui/icons-material/Home';
@@ -8,11 +8,14 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import SearchIcon from '@mui/icons-material/Search';
 import GridViewIcon from '@mui/icons-material/GridView';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { DarkModeContext} from '../../Context/darkModeContext';
+import LightModeIcon from '@mui/icons-material/LightMode';
 
 import "./Navbar.scss";
 import {Link} from "react-router-dom";
 
 function Navbar({dark,setDark}) {
+  const {toggle,darkMode}=useContext(DarkModeContext)
   const darkHandeler=()=>{
     setDark(!dark)
   }
@@ -23,9 +26,9 @@ function Navbar({dark,setDark}) {
           <span>Tehran Sochial</span>
         </Link>
           <HomeIcon/>
-          <div onClick={darkHandeler}>
-          <DarkModeIcon/>
-          </div>
+          {darkMode ? <DarkModeIcon onClick={toggle}/> : <LightModeIcon onClick={toggle}/>}
+          
+        
           <GridViewIcon/>
           <div className="search">
           <SearchIcon/>
